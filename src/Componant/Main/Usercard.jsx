@@ -30,7 +30,14 @@ function Usercard() {
           <h1>DATA SHOW IN CARD PAGE</h1>
           {selecteduser && (
             <>
+              
               <div className="user-card-p">
+              <div>
+                <img
+                  src={selecteduser.picture?.thumbnail || ""}
+                  alt={`${selecteduser.name.first} ${selecteduser.name.last}`}
+                />
+              </div>
                 <h1>{`${selecteduser.name.title} ${selecteduser.name.first} ${selecteduser.name.last}`}</h1>
                 <p>
                   {selecteduser.location.street.number},{" "}
@@ -52,12 +59,12 @@ function Usercard() {
               {users.map((user, i) => (
                 <div className="user-card" onClick={() => onClick(user)}>
                   <>
-                    <div>
+                    {/* <div>
                       <img
                         src={user.picture?.thumbnail || ""}
                         alt={`${user.name.first} ${user.name.last}`}
                       />
-                    </div>
+                    </div> */}
                     <div>
                       <h1>{`${user.name.title} ${user.name.first} ${user.name.last}`}</h1>
                       <p>
